@@ -18,42 +18,37 @@
     "RUN_CTS": false,
     "RUN_IRDROP_REPORT": false,
     "ERROR_ON_SYNTH_CHECKS": false,
+    
+    "QUIT_ON_MAGIC_DRC": false,
+    "MAGIC_EXT_USE_GDS": false,
+    "MAGIC_CAPTURE_ERRORS": false,
+    "QUIT_ON_ILLEGAL_OVERLAPS": false,
+    "RUN_KLAYOUT_DRC": false,
 
     "//": "Macros configurations",
     "MACROS": {
-        "user_proj_example": {
+        "sky130_sram_1kbyte_1rw1r_32x256_8": {
             "gds": [
-                "dir::../../gds/user_proj_example.gds"
+                "pdk_dir::libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
             ],
             "lef": [
-                "dir::../../lef/user_proj_example.lef"
+                "pdk_dir::libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
             ],
             "instances": {
-                "mprj": {
+                "mem": {
                     "location": [60, 15],
                     "orientation": "N"
                 }
             },
             "nl": [
-                "dir::../../verilog/gl/user_proj_example.v"
+                "pdk_dir::libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v"
             ],
-            "spef": {
-                "min_*": [
-                    "dir::../../spef/multicorner/user_proj_example.min.spef"
-                ],
-                "nom_*": [
-                    "dir::../../spef/multicorner/user_proj_example.nom.spef"
-                ],
-                "max_*": [
-                    "dir::../../spef/multicorner/user_proj_example.max.spef"
-                ]
-            },
             "lib": {
-                "*": "dir::../../lib/user_proj_example.lib"
+                "*": "pdk_dir::libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib"
             }
         }
     },
-    "PDN_MACRO_CONNECTIONS": ["mprj vccd2 vssd2 vccd1 vssd1"],
+    "PDN_MACRO_CONNECTIONS": ["mem vccd2 vssd2 vccd1 vssd1"],
 
     "//": "PDN configurations",
     "FP_PDN_VOFFSET": 5,
